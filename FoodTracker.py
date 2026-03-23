@@ -2,6 +2,8 @@ import re
 import csv
 from datetime import datetime 
 
+Users = []
+
 class AccountInfo: 
     def _init_(self, username, password):
         if not  username:
@@ -30,6 +32,27 @@ class FoodEntry:
         self.protein = protein
         self.calories = calories 
         self.date = date 
+
+def SignUp():
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    user = User(username, password)
+    Users.append(user)
+    print("Account has been made, goodluck on your journey!") 
+    
+def SignIn():
+    username = input("Entere your username: ")
+    password = input("Enter your password: ")
+    for user in Users:
+        if username == user.username and password == user.password:
+            print("Welcome back, " + username + "Hope you have a good day!")
+            return user 
+    print("Invalid username or password has been entered please try again")
+
+
+    
+
+
 
 
 
