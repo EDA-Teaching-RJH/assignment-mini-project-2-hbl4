@@ -11,9 +11,35 @@ class AccountInfo:
         self.username = username 
         self.password = password
 
-class user(AccountInfo):
+class User(AccountInfo):
     def _init_(self, username, password):
         super()._init_(username,password)
+        self.meals =[]
+
+    def add_meal(self, meal_type, fats, carbs, protein, calories, date):
+        entry = FoodEntry(meal_type, fats, carbs, protein, calories, date)
+        self.meals.append(entry)
+
+
+
+class FoodEntry:
+    def __init__(self,meal_type, fats, carbs, protein, calories,date):
+        self.meal_type = meal_type
+        self.fats = fats
+        self.carbs = carbs 
+        self.protein = protein
+        self.calories = calories 
+        self.date = date 
+
+
+
+        
+
+
+
+
+
+        
 
 
 
